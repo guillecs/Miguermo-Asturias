@@ -87,10 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         const bookingFormLink = document.getElementById('bookingFormLink');
-        if(bookingFormLink && config.calendarPage.googleFormLink) {
-            bookingFormLink.href = config.calendarPage.googleFormLink;
+        // CORRECCIÓN AQUÍ: Acceder a googleFormLink a través de bookingSection
+        if(bookingFormLink && config.calendarPage.bookingSection && config.calendarPage.bookingSection.googleFormLink) {
+            bookingFormLink.href = config.calendarPage.bookingSection.googleFormLink;
             bookingFormLink.textContent = "Abrir Formulario de Reserva";
         } else if (bookingFormLink) {
+            // Este console.warn se activará si googleFormLink no está definido o es vacío.
             console.warn('Enlace del formulario de reserva no encontrado o vacío en config.json');
         }
 
