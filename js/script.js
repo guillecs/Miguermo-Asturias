@@ -58,20 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroDescriptionDynamic = document.getElementById('heroDescriptionDynamic');
         if (heroDescriptionDynamic) heroDescriptionDynamic.textContent = config.heroPage.description;
         
-        const contactDetailsContent = document.getElementById('contactDetailsContent');
-        if (contactDetailsContent) {
-            // Asegúrate de que contactPage existe antes de acceder a sus propiedades
-            if (config.contactPage) {
-                contactDetailsContent.innerHTML = `
-                    <p><strong>Email:</strong> ${config.contactPage.email}</p>
-                    <p><strong>Teléfono:</strong> ${config.contactPage.phone}</p>
-                    <p><strong>Dirección:</strong> ${config.contactPage.address}</p>
-                    <p><strong>Horario:</strong> ${config.contactPage.hours}</p>
-                `;
-            } else {
-                console.warn('La sección contactPage no está definida en config.json');
-            }
-        }
+        // La sección de contacto ha sido eliminada, por lo que este bloque ya no es necesario
 
         // --- Elementos específicos de la página de calendario (calendario.html) ---
         const calendarTitleDynamic = document.getElementById('calendarTitleDynamic');
@@ -149,6 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
             locationAddressDynamic.textContent = config.informationPage.locationInfo.address;
         }
 
+        // Cargar el mapa de Google Maps
+        const googleMapsEmbed = document.getElementById('googleMapsEmbed');
+        if (googleMapsEmbed && config.informationPage && config.informationPage.locationInfo && config.informationPage.locationInfo.googleMapsEmbedUrl) {
+            googleMapsEmbed.src = config.informationPage.locationInfo.googleMapsEmbedUrl;
+        } else if (googleMapsEmbed) {
+            console.warn('URL de Google Maps no encontrada o vacía en config.json para locationInfo.');
+        }
+
+
         const gettingThereDynamic = document.getElementById('gettingThereDynamic');
         if (gettingThereDynamic && config.informationPage && config.informationPage.locationInfo && config.informationPage.locationInfo.gettingThere) {
             // Aplica formatMarkdownText a cada elemento antes de crear el li
@@ -218,23 +214,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Comprueba si el elemento del pop-up existe en la página actual.
             if (passwordOverlay) {
-                // Si existe, lo muestra.
-                passwordOverlay.classList.add('is-active');
+                // Si existe, lo muestra usando clases de Bootstrap y controlando la opacidad
+                passwordOverlay.classList.remove('d-none'); // Quita d-none
+                passwordOverlay.classList.add('d-flex');    // Añade d-flex para mostrarlo como flexbox
+                passwordOverlay.style.opacity = '1';        // Asegura la opacidad a 1 para la transición de fade out
+
                 passwordInput.focus(); // Pone el cursor en el campo de contraseña.
 
                 // Función para verificar la contraseña introducida.
                 const checkPassword = () => {
                     if (passwordInput.value === CORRECT_PASSWORD) {
                         // Contraseña correcta: oculta el pop-up con una transición.
-                        passwordOverlay.style.opacity = '0';
+                        passwordOverlay.style.opacity = '0'; // Inicia la transición de opacidad a 0
                         setTimeout(() => {
-                            passwordOverlay.classList.remove('is-active');
-                            passwordOverlay.style.display = 'none';
-                        }, 300); // Espera a que termine la transición de opacidad
+                            passwordOverlay.classList.remove('d-flex'); // Quita d-flex
+                            passwordOverlay.classList.add('d-none');    // Añade d-none para ocultar completamente
+                            passwordOverlay.style.opacity = '1';        // Restablece la opacidad a 1 para la próxima vez que se muestre
+                        }, 300); // Espera a que termine la transición de opacidad (debe coincidir con la duración de CSS)
                     } else {
                         // Contraseña incorrecta: muestra un mensaje de error.
                         passwordError.textContent = 'Contraseña incorrecta. Inténtalo de nuevo.';
-                        passwordError.style.display = 'block';
+                        passwordError.classList.remove('d-none'); // Muestra el mensaje de error
                         passwordInput.value = ''; // Limpia el campo.
                         passwordInput.focus(); // Vuelve a poner el cursor en el campo.
                     }

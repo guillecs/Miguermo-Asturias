@@ -1,8 +1,48 @@
-/* --- Variables CSS Globales --- */
 /*
- * Estas variables definen la paleta de colores, la tipografía y el espaciado
- * base para toda la aplicación. Se cargan dinámicamente desde config.json.
+ * ######################################################
+ * # Sobrescribir variables y clases de color de Bootstrap #
+ * ######################################################
+ *
+ * Estas reglas aseguran que las clases de Bootstrap (ej. text-primary, bg-dark)
+ * utilicen los colores definidos en tus variables CSS globales,
+ * que a su vez se cargan desde config.json.
+ * Esto es crucial para que tu tema personalizado se aplique correctamente
+ * a los componentes de Bootstrap.
  */
+:root {
+    --bs-primary: var(--primary-color);
+    --bs-secondary: var(--secondary-color);
+    --bs-success: var(--accent-color); /* Mapeamos accent a success, común para colores positivos */
+    --bs-info: var(--secondary-color); /* Un ejemplo, puedes mapear info a otro color si lo usas */
+    --bs-light: var(--light-bg);
+    --bs-white: var(--white-bg);
+    --bs-dark: var(--dark-text);
+    /* Puedes añadir más si usas otros colores de Bootstrap y quieres mapearlos */
+    --bs-body-color: var(--dark-text); /* Color de texto general del body en Bootstrap */
+    --bs-body-bg: var(--light-bg);     /* Color de fondo general del body en Bootstrap */
+}
+
+/* Forzamos a las clases de color de Bootstrap a usar nuestras variables */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-accent { color: var(--accent-color) !important; } /* Si usas una clase text-accent personalizada */
+.text-dark { color: var(--dark-text) !important; }
+.text-light { color: var(--light-text) !important; }
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-accent { background-color: var(--accent-color) !important; } /* Si usas una clase bg-accent personalizada */
+.bg-dark { background-color: var(--dark-text) !important; }
+.bg-light { background-color: var(--light-bg) !important; }
+.bg-white { background-color: var(--white-bg) !important; }
+
+/* Para los bordes de Bootstrap */
+.border-primary { border-color: var(--primary-color) !important; }
+.border-secondary { border-color: var(--secondary-color) !important; }
+.border-accent { border-color: var(--accent-color) !important; }
+
+
+/* --- Variables CSS Globales --- */
 :root {
     --primary-color: #007bff;          /* Azul vibrante para elementos principales */
     --secondary-color: #6c757d;         /* Gris para elementos secundarios */
@@ -17,275 +57,239 @@
 }
 
 /* --- Estilos Globales y Reset Básico --- */
-/*
- * Reset CSS para asegurar una consistencia entre navegadores.
- * Se incluye box-sizing para facilitar el diseño.
- */
 * {
-    box-sizing: border-box; /* Incluye padding y border en el ancho/alto del elemento */
-    margin: 0;              /* Elimina márgenes predeterminados */
-    padding: 0;             /* Elimina paddings predeterminados */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/*
- * Estilos base para el cuerpo del documento.
- * Se utiliza flexbox para asegurar que el footer se "pegue" al final de la página.
- */
 body {
-    font-family: var(--font-family);   /* Aplica la fuente global */
-    line-height: 1.6;                  /* Altura de línea para mejor legibilidad */
-    color: var(--dark-text);           /* Color de texto principal */
-    background-color: var(--light-bg); /* Color de fondo general */
-    min-height: 100vh;                 /* Asegura que el body ocupe al menos el 100% del alto de la ventana */
-    display: flex;                     /* Habilita flexbox */
-    flex-direction: column;            /* Organiza el contenido en columna */
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--dark-text); /* Se sobrescribe por --bs-body-color si Bootstrap tiene prioridad */
+    background-color: var(--light-bg); /* Se sobrescribe por --bs-body-bg si Bootstrap tiene prioridad */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Contenedor Central --- */
-/*
- * Clase para centrar y limitar el ancho del contenido principal.
- */
 .container {
-    max-width: 1200px;                    /* Ancho máximo del contenido */
-    margin: 0 auto;                       /* Centra el contenedor horizontalmente */
-    padding: 0 var(--spacing-unit);       /* Padding lateral para que el contenido no toque los bordes */
-    width: 100%;                          /* Asegura que ocupe todo el ancho disponible hasta el max-width */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    width: 100%;
 }
 
 /* --- Tipografía y Enlaces --- */
-/*
- * Estilos generales para enlaces y elementos de texto.
- */
 a {
-    color: var(--primary-color); /* Color de enlace principal */
-    text-decoration: none;       /* Quita el subrayado por defecto */
-    transition: color 0.3s ease; /* Transición suave para el color del enlace */
+    color: var(--primary-color); /* Esto ahora sobrescribirá el color de enlace de Bootstrap si no usas text-primary */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline; /* Añade subrayado al pasar el ratón */
-    color: var(--accent-color); /* Cambia el color al pasar el ratón */
+    text-decoration: underline;
+    color: var(--accent-color);
 }
 
-/* Estilos para títulos h1, h2, etc. */
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: calc(var(--spacing-unit) / 2); /* Margen inferior para títulos */
-    color: var(--primary-color);                   /* Color principal para títulos */
+    margin-bottom: calc(var(--spacing-unit) / 2);
+    color: var(--primary-color); /* Esto también podría ser sobrescrito por clases de Bootstrap */
 }
 
 p {
-    margin-bottom: var(--spacing-unit); /* Margen inferior para párrafos */
+    margin-bottom: var(--spacing-unit);
 }
 
-/* Estilo para las descripciones de las secciones */
 .section-description {
-    font-size: 1.1em;                                  /* Tamaño de fuente ligeramente más grande */
-    max-width: 800px;                                  /* Ancho máximo para descripciones largas */
-    margin: 0 auto calc(var(--spacing-unit) * 2);      /* Centra y añade margen inferior */
-    color: var(--dark-text);                           /* Color de texto oscuro */
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto calc(var(--spacing-unit) * 2);
+    color: var(--dark-text);
 }
 
 
 /* --- Botones --- */
-/*
- * Estilos base para los botones, con transiciones para efectos visuales.
- */
 .btn-primary,
 .btn-secondary {
-    display: inline-block;                             /* Permite aplicar padding y márgenes como un bloque */
-    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5); /* Padding interno */
-    border-radius: 5px;                                /* Esquinas redondeadas */
-    text-align: center;                                /* Centra el texto */
-    text-decoration: none;                             /* Sin subrayado */
-    font-weight: bold;                                 /* Texto en negrita */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
-    white-space: nowrap;                               /* Evita que el texto del botón se rompa en varias líneas */
-    margin: calc(var(--spacing-unit) / 2);             /* Pequeño margen para botones en línea */
-    cursor: pointer;                                   /* Indicador de clic */
+    display: inline-block;
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+    margin: calc(var(--spacing-unit) / 2);
+    cursor: pointer;
 }
 
+/* Si usas la clase 'btn-primary' de Bootstrap en HTML, se usará --bs-primary */
 .btn-primary {
-    background-color: var(--primary-color); /* Color de fondo principal */
-    color: var(--light-text);               /* Color de texto claro */
-    border: 2px solid var(--primary-color); /* Borde con color principal */
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color); /* Cambia a color secundario al pasar el ratón */
-    border-color: var(--secondary-color);     /* Borde con color secundario */
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
     color: var(--light-text);
     text-decoration: none;
 }
 
 .btn-secondary {
-    background-color: transparent;           /* Fondo transparente */
-    color: var(--primary-color);             /* Color de texto principal */
-    border: 2px solid var(--primary-color); /* Borde con color principal */
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color); /* Cambia a color principal al pasar el ratón */
-    color: var(--light-text);               /* Color de texto claro */
+    background-color: var(--primary-color);
+    color: var(--light-text);
     text-decoration: none;
 }
 
-/* Estilo para botones más pequeños */
 .small-btn {
-    padding: calc(var(--spacing-unit) / 2) var(--spacing-unit); /* Padding reducido */
-    font-size: 0.9em;                                            /* Tamaño de fuente más pequeño */
+    padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+    font-size: 0.9em;
     margin: 5px;
 }
 
 
 /* --- Encabezado (Header) --- */
-/*
- * Estilos para el encabezado de la página, incluyendo logo y navegación.
- * Se ha revertido el fondo a un color sólido.
- */
 header {
-    background-color: var(--dark-text);    /* Fondo oscuro */
-    color: var(--light-text);              /* Texto claro */
-    padding: calc(var(--spacing-unit) / 4) 0; /* Padding vertical */
-    border-bottom: 3px solid var(--primary-color); /* Borde inferior de acento */
+    background-color: var(--dark-text); /* Esto se aplicará si no usas bg-dark de Bootstrap */
+    color: var(--light-text); /* Esto se aplicará si no usas text-white de Bootstrap */
+    padding: calc(var(--spacing-unit) / 4) 0;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 header .container {
-    display: flex;             /* Habilita flexbox para el contenido del header */
-    justify-content: space-between; /* Espacia logo y navegación */
-    align-items: center;       /* Alinea elementos verticalmente */
-    flex-wrap: wrap;           /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo a {
-    color: var(--light-text);     /* Color de texto del logo */
-    font-size: 1.5em;             /* Tamaño de fuente del logo */
-    font-weight: bold;            /* Texto en negrita */
-    text-decoration: none;        /* Sin subrayado */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto del logo */
+    color: var(--light-text);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex;    /* Habilita flexbox para los elementos de navegación */
-    flex-wrap: wrap;  /* Permite que los elementos se envuelvan */
-    justify-content: center; /* Centra los elementos en pantallas pequeñas */
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    margin-left: var(--spacing-unit); /* Margen entre elementos de la lista */
+    margin-left: var(--spacing-unit);
 }
 
 nav ul li a {
-    color: var(--light-text); /* Color de texto de los enlaces de navegación */
-    text-decoration: none;    /* Sin subrayado */
-    padding: calc(var(--spacing-unit) / 4) 0; /* Padding vertical */
-    display: block;           /* Hace que todo el área del li sea clicable */
-    transition: color 0.3s ease; /* Transición suave para el color */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto de navegación */
+    color: var(--light-text);
+    text-decoration: none;
+    padding: calc(var(--spacing-unit) / 4) 0;
+    display: block;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 nav ul li a:hover {
-    color: var(--primary-color); /* Cambia el color al pasar el ratón */
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 /* --- Sección Hero --- */
-/*
- * Estilos para la sección principal de bienvenida en la página de inicio.
- * Ahora incluye la imagen de fondo.
- */
 .hero-section {
-    /* Aquí se añade la imagen de fondo */
-    background-image: url('../img/sanClaudio.jpg'); /* Ruta a tu imagen */
-    background-size: cover;                        /* Escala la imagen para cubrir todo el elemento */
-    background-position: center center;            /* Centra la imagen */
-    background-repeat: no-repeat;                  /* Evita que la imagen se repita */
-    background-color: rgba(0, 0, 0, 0.5);          /* Fondo oscuro semi-transparente para la visibilidad del texto */
-    background-blend-mode: multiply;               /* Mezcla el color de fondo con la imagen */
+    background-image: url('../img/sanClaudio.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
     
-    color: var(--light-text);                  /* Texto claro */
-    text-align: center;                        /* Centra el texto */
-    padding: calc(var(--spacing-unit) * 3) 0;  /* Padding vertical generoso */
-    display: flex;                             /* Habilita flexbox */
-    align-items: center;                       /* Centra el contenido verticalmente */
-    justify-content: center;                   /* Centra el contenido horizontalmente */
-    min-height: 350px;                         /* Altura mínima de la sección */
-    flex-direction: column;                    /* Contenido en columna */
+    color: var(--light-text);
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 3) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    flex-direction: column;
 }
 
 .hero-section h1 {
-    font-size: 3.5em;                                /* Tamaño de fuente grande para el título */
-    margin-bottom: calc(var(--spacing-unit) / 2);    /* Margen inferior */
-    color: var(--light-text);                        /* Color de texto claro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);      /* Sombra para el texto */
+    font-size: 3.5em;
+    margin-bottom: calc(var(--spacing-unit) / 2);
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-section p {
-    font-size: 1.2em;                               /* Tamaño de fuente para la descripción */
-    margin-bottom: calc(var(--spacing-unit) * 2);   /* Margen inferior */
-    max-width: 700px;                               /* Ancho máximo para la descripción */
-    margin-left: auto;                              /* Centra el párrafo */
-    margin-right: auto;                             /* Centra el párrafo */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);     /* Sombra para el texto */
+    font-size: 1.2em;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* --- Secciones de Contenido General --- */
-/*
- * Estilos para las secciones principales de contenido.
- */
 main section {
-    padding: calc(var(--spacing-unit) * 3) 0; /* Padding vertical para todas las secciones */
+    padding: calc(var(--spacing-unit) * 3) 0;
 }
 
 .featured-section {
-    background-color: var(--light-bg); /* Fondo claro para secciones destacadas */
-    text-align: center;                /* Centra el texto */
+    background-color: var(--light-bg);
+    text-align: center;
 }
 
 .info-section {
-    background-color: var(--white-bg); /* Fondo blanco para secciones de información */
-    text-align: center;                /* Centra el texto */
-    padding: calc(var(--spacing-unit) * 3) 0; /* Padding vertical */
+    background-color: var(--white-bg);
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 3) 0;
 }
 
-/* --- Cuadrícula de Opciones (Página de inicio) --- */
-/*
- * Estilos para la cuadrícula de tarjetas de opciones en la página de inicio.
- */
+/* --- Cuadrícula de Opciones (Página de inicio y Checklist) --- */
 .options-grid {
-    display: grid;                                      /* Habilita CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
-    gap: var(--spacing-unit);                           /* Espacio entre las tarjetas */
-    margin-top: calc(var(--spacing-unit) * 2);          /* Margen superior */
-    justify-content: center;                            /* Centra la cuadrícula */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmin(280px, 1fr));
+    gap: var(--spacing-unit);
+    margin-top: calc(var(--spacing-unit) * 2);
+    justify-content: center;
 }
 
+/* --- Tarjetas de Opción (Página de inicio y Checklist) --- */
 .option-card {
-    background-color: var(--white-bg);          /* Fondo blanco para la tarjeta */
-    border-radius: 10px;                        /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Sombra suave */
-    padding: calc(var(--spacing-unit) * 1.5);   /* Padding interno */
-    text-align: center;                         /* Centra el texto */
-    transition: transform 0.3s ease;            /* Transición para el efecto hover */
-    border-top: 5px solid var(--primary-color); /* Borde superior de acento */
+    background-color: var(--white-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: calc(var(--spacing-unit) * 1.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color);
 }
 
 .option-card:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    transform: translateY(-5px);
 }
 
 .option-card h3 {
-    color: var(--dark-text);        /* Color de texto para el título de la tarjeta */
-    margin-bottom: var(--spacing-unit); /* Margen inferior */
+    color: var(--dark-text);
+    margin-bottom: var(--spacing-unit);
 }
 
 /* --- Estilos Específicos del Calendario --- */
-/*
- * Contenedor para el iframe del calendario de Google.
- */
 .calendar-embed-container {
-    position: relative; /* Necesario para la relación de aspecto del iframe */
-    padding-bottom: 75%; /* Relación de aspecto 4:3 (o ajusta según necesites) */
+    position: relative;
+    padding-bottom: 75%;
     height: 0;
     overflow: hidden;
     margin-bottom: calc(var(--spacing-unit) * 2);
@@ -295,15 +299,14 @@ main section {
 }
 
 .calendar-embed-container iframe {
-    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;    /* Ocupa todo el ancho del contenedor */
-    height: 100%;   /* Ocupa todo el alto del contenedor */
-    border-radius: 10px; /* Esquinas redondeadas para el iframe */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
-/* Sección de reserva bajo el calendario */
 .booking-section {
     background-color: var(--light-bg);
     padding: calc(var(--spacing-unit) * 2);
@@ -322,30 +325,20 @@ main section {
 }
 
 /* --- Estilos Específicos para la Página de Información (informacion.html) --- */
-/* Contenedor de la cuadrícula para las tarjetas de información */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-    gap: var(--spacing-unit);
-    margin-top: calc(var(--spacing-unit) * 2);
-    justify-content: center; /* Centra la cuadrícula */
-}
-
-/* Estilos para las tarjetas de información individuales */
 .info-card {
-    background-color: var(--white-bg);          /* Fondo blanco para la tarjeta */
-    border-radius: 10px;                        /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Sombra suave */
-    padding: calc(var(--spacing-unit) * 1.5);   /* Padding interno */
-    margin-bottom: calc(var(--spacing-unit) / 2); /* Pequeño margen inferior, la cuadrícula manejará el espaciado principal */
-    text-align: left;                           /* Alinear texto a la izquierda dentro de la tarjeta */
-    border-top: 5px solid var(--accent-color);  /* Borde superior de acento */
+    background-color: var(--white-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: calc(var(--spacing-unit) * 1.5);
+    margin-bottom: calc(var(--spacing-unit) / 2);
+    text-align: left;
+    border-top: 5px solid var(--accent-color);
 }
 
 .info-card h2 {
-    color: var(--primary-color);                /* Color de título */
-    margin-bottom: var(--spacing-unit);         /* Margen inferior */
-    text-align: center;                         /* Centra el título dentro de la tarjeta */
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
+    text-align: center;
 }
 
 .info-card h3 {
@@ -354,39 +347,33 @@ main section {
     margin-bottom: calc(var(--spacing-unit) / 2);
 }
 
-/* Estilos para las listas dentro de las tarjetas */
 .info-list {
-    list-style: disc inside;                    /* Puntos de lista dentro del contenido */
-    margin-bottom: var(--spacing-unit);         /* Margen inferior */
-    padding-left: var( --spacing-unit);          /* Sangría para los elementos de la lista */
+    list-style: disc inside;
+    margin-bottom: var(--spacing-unit);
+    padding-left: var( --spacing-unit);
     color: var(--dark-text);
 }
 
 .info-list li {
-    margin-bottom: calc(var(--spacing-unit) / 4); /* Espacio entre elementos de la lista */
-    line-height: 1.5; /* Altura de línea para mejorar la legibilidad de la lista */
+    margin-bottom: calc(var(--spacing-unit) / 4);
+    line-height: 1.5;
 }
 
-/* Ajustes para texto en negrita dentro de las listas */
 .info-list li strong {
-    color: var(--primary-color); /* Color de texto para el contenido en negrita */
+    color: var(--primary-color);
 }
 
 
 /* --- Pie de Página (Footer) --- */
-/*
- * Estilos para el pie de página, pegado al final del documento.
- */
 footer {
-    background-color: var(--dark-text); /* Fondo oscuro */
-    color: var(--light-text);           /* Texto claro */
-    padding: var(--spacing-unit) 0;     /* Padding vertical */
-    text-align: center;                 /* Centra el texto */
-    margin-top: auto;                   /* Empuja el footer hacia abajo */
-    border-top: 3px solid var(--primary-color); /* Borde superior de acento */
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    padding: var(--spacing-unit) 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 3px solid var(--primary-color);
 }
 
-/* Enlaces de redes sociales en el footer */
 .social-links {
     margin-top: var(--spacing-unit);
 }
@@ -404,22 +391,19 @@ footer {
 
 
 /* --- Pop-up de Contraseña --- */
-/*
- * Estilos para el overlay y el formulario de contraseña.
- */
 .password-overlay {
-    position: fixed;                             /* Se posiciona sobre todo el contenido */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);       /* Fondo oscuro semi-transparente */
-    display: none;                               /* Por defecto estará oculto */
-    justify-content: center;                     /* Centra horizontalmente */
-    align-items: center;                         /* Centra verticalmente */
-    z-index: 2000;                               /* Se asegura de que esté por encima de todo */
-    backdrop-filter: blur(5px);                  /* Efecto de desenfoque en el fondo */
-    transition: opacity 0.3s ease;               /* Transición suave para la opacidad */
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none; /* Por defecto estará oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease;
 }
 
 /* Clase para mostrar el pop-up con JavaScript */
@@ -429,86 +413,76 @@ footer {
 }
 
 .password-form-container {
-    background-color: var(--white-bg);         /* Fondo del formulario */
-    padding: calc(var(--spacing-unit) * 2);    /* Padding interno */
-    border-radius: 10px;                       /* Esquinas redondeadas */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para el formulario */
-    text-align: center;                        /* Centra el texto */
-    max-width: 400px;                          /* Ancho máximo del formulario */
-    width: 90%;                                /* Ancho flexible */
-    transform: translateY(0);                  /* Reinicia la posición para animaciones */
-    opacity: 1;                                /* Asegura opacidad completa */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+    background-color: var(--white-bg);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .password-form-container h2 {
-    color: var(--primary-color);           /* Color de título */
-    margin-bottom: var(--spacing-unit);    /* Margen inferior */
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
 }
 
 .password-form-container p {
-    margin-bottom: calc(var(--spacing-unit) * 1.5); /* Margen inferior */
-    color: var(--dark-text);                       /* Color de texto */
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    color: var(--dark-text);
 }
 
 #password-input {
-    width: 100%;                                 /* Ancho completo */
-    padding: var(--spacing-unit);                /* Padding interno */
-    margin-bottom: var(--spacing-unit);          /* Margen inferior */
-    border: 1px solid var(--border-color);       /* Borde */
-    border-radius: 5px;                          /* Esquinas redondeadas */
-    font-size: 1em;                              /* Tamaño de fuente */
+    width: 100%;
+    padding: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 #password-submit {
-    width: 100%;                                   /* Ancho completo */
-    padding: var(--spacing-unit);                  /* Padding interno */
-    background-color: var(--primary-color);        /* Fondo con color principal */
-    color: var(--light-text);                      /* Texto claro */
-    border: none;                                  /* Sin borde */
-    border-radius: 5px;                            /* Esquinas redondeadas */
-    font-size: 1.1em;                              /* Tamaño de fuente */
-    font-weight: bold;                             /* Texto en negrita */
-    cursor: pointer;                               /* Indicador de clic */
-    transition: background-color 0.3s ease;        /* Transición suave para el fondo */
+    width: 100%;
+    padding: var(--spacing-unit);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #password-submit:hover {
-    background-color: var(--accent-color); /* Cambia a color de acento al pasar el ratón */
+    background-color: var(--accent-color);
 }
 
 #password-error {
-    color: #D8000C;         /* Rojo para el error */
-    background-color: #FFBABA; /* Fondo claro para el error */
-    border: 1px solid #D8000C; /* Borde rojo */
-    padding: 10px;           /* Padding interno */
-    border-radius: 5px;      /* Esquinas redondeadas */
-    margin-top: var(--spacing-unit); /* Margen superior */
-    font-weight: bold;       /* Texto en negrita */
-    display: none;           /* Oculto hasta que haya un error */
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 1px solid #D8000C;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: var(--spacing-unit);
+    font-weight: bold;
+    display: none;
 }
 
 
 /* --- Media Queries para Responsividad --- */
-/*
- * Ajustes de diseño para diferentes tamaños de pantalla.
- */
 @media (min-width: 768px) {
-    /* En pantallas medianas y grandes, el header se mantiene en una línea */
     header .container { flex-wrap: nowrap; }
-    /* La navegación se alinea a la derecha */
     nav ul { justify-content: flex-end; }
 }
 
 @media (max-width: 576px) {
-    /* En pantallas pequeñas, el título del hero section se reduce */
     .hero-section h1 { font-size: 2.5em; }
-    /* La descripción del hero section se reduce */
     .hero-section p { font-size: 1em; }
-    /* El header se organiza en columna */
     header .container { flex-direction: column; text-align: center; }
-    /* La navegación se organiza en columna y se centra */
     nav ul { margin-top: var(--spacing-unit); flex-direction: column; align-items: center; }
-    /* Margen entre elementos de navegación en pantallas pequeñas */
     nav ul li { margin: calc(var(--spacing-unit) / 2) 0; }
 }
