@@ -85,6 +85,7 @@ p {
     color: var(--dark-text);                           /* Color de texto oscuro */
 }
 
+
 /* --- Botones --- */
 /*
  * Estilos base para los botones, con transiciones para efectos visuales.
@@ -139,6 +140,7 @@ p {
 /* --- Encabezado (Header) --- */
 /*
  * Estilos para el encabezado de la página, incluyendo logo y navegación.
+ * Se ha revertido el fondo a un color sólido.
  */
 header {
     background-color: var(--dark-text);    /* Fondo oscuro */
@@ -159,6 +161,7 @@ header .container {
     font-size: 1.5em;             /* Tamaño de fuente del logo */
     font-weight: bold;            /* Texto en negrita */
     text-decoration: none;        /* Sin subrayado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto del logo */
 }
 
 nav ul {
@@ -178,6 +181,7 @@ nav ul li a {
     padding: calc(var(--spacing-unit) / 4) 0; /* Padding vertical */
     display: block;           /* Hace que todo el área del li sea clicable */
     transition: color 0.3s ease; /* Transición suave para el color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto de navegación */
 }
 
 nav ul li a:hover {
@@ -188,9 +192,17 @@ nav ul li a:hover {
 /* --- Sección Hero --- */
 /*
  * Estilos para la sección principal de bienvenida en la página de inicio.
+ * Ahora incluye la imagen de fondo.
  */
 .hero-section {
-    background-color: var(--primary-color);    /* Fondo con color principal */
+    /* Aquí se añade la imagen de fondo */
+    background-image: url('../img/sanClaudio.jpg'); /* Ruta a tu imagen */
+    background-size: cover;                        /* Escala la imagen para cubrir todo el elemento */
+    background-position: center center;            /* Centra la imagen */
+    background-repeat: no-repeat;                  /* Evita que la imagen se repita */
+    background-color: rgba(0, 0, 0, 0.5);          /* Fondo oscuro semi-transparente para la visibilidad del texto */
+    background-blend-mode: multiply;               /* Mezcla el color de fondo con la imagen */
+    
     color: var(--light-text);                  /* Texto claro */
     text-align: center;                        /* Centra el texto */
     padding: calc(var(--spacing-unit) * 3) 0;  /* Padding vertical generoso */
@@ -309,6 +321,57 @@ main section {
     margin-bottom: calc(var(--spacing-unit) * 1.5);
 }
 
+/* --- Estilos Específicos para la Página de Información (informacion.html) --- */
+/* Contenedor de la cuadrícula para las tarjetas de información */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: var(--spacing-unit);
+    margin-top: calc(var(--spacing-unit) * 2);
+    justify-content: center; /* Centra la cuadrícula */
+}
+
+/* Estilos para las tarjetas de información individuales */
+.info-card {
+    background-color: var(--white-bg);          /* Fondo blanco para la tarjeta */
+    border-radius: 10px;                        /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Sombra suave */
+    padding: calc(var(--spacing-unit) * 1.5);   /* Padding interno */
+    margin-bottom: calc(var(--spacing-unit) / 2); /* Pequeño margen inferior, la cuadrícula manejará el espaciado principal */
+    text-align: left;                           /* Alinear texto a la izquierda dentro de la tarjeta */
+    border-top: 5px solid var(--accent-color);  /* Borde superior de acento */
+}
+
+.info-card h2 {
+    color: var(--primary-color);                /* Color de título */
+    margin-bottom: var(--spacing-unit);         /* Margen inferior */
+    text-align: center;                         /* Centra el título dentro de la tarjeta */
+}
+
+.info-card h3 {
+    color: var(--dark-text);
+    margin-top: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) / 2);
+}
+
+/* Estilos para las listas dentro de las tarjetas */
+.info-list {
+    list-style: disc inside;                    /* Puntos de lista dentro del contenido */
+    margin-bottom: var(--spacing-unit);         /* Margen inferior */
+    padding-left: var( --spacing-unit);          /* Sangría para los elementos de la lista */
+    color: var(--dark-text);
+}
+
+.info-list li {
+    margin-bottom: calc(var(--spacing-unit) / 4); /* Espacio entre elementos de la lista */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad de la lista */
+}
+
+/* Ajustes para texto en negrita dentro de las listas */
+.info-list li strong {
+    color: var(--primary-color); /* Color de texto para el contenido en negrita */
+}
+
 
 /* --- Pie de Página (Footer) --- */
 /*
@@ -350,7 +413,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);       /* Fondo oscuro semitransparente */
+    background-color: rgba(0, 0, 0, 0.85);       /* Fondo oscuro semi-transparente */
     display: none;                               /* Por defecto estará oculto */
     justify-content: center;                     /* Centra horizontalmente */
     align-items: center;                         /* Centra verticalmente */

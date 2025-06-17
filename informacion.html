@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- El título de la página se cargará dinámicamente desde config.json -->
+    <title id="siteTitleDynamic">Cargando Información...</title>
+    <!-- Enlazamos nuestro archivo CSS para los estilos de la página -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Enlace a FontAwesome para iconos de redes sociales en el footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado de la página: Contiene el logo y la navegación principal -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- El texto del logo/título del sitio se cargará dinámicamente desde config.json -->
+                <a href="index.html" id="siteTitleDynamic">Cargando...</a> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="checklist.html">Checklist</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección principal de contenido para la página de Información -->
+    <main>
+        <section id="information-page" class="info-section">
+            <div class="container">
+                <!-- Título principal de la sección de Información -->
+                <h1 id="infoTitleDynamic">Cargando...</h1>
+                <p class="section-description" id="infoDescriptionDynamic">Cargando...</p>
+
+                <!-- Sección de Normas de la Casa -->
+                <div class="info-card">
+                    <h2>Normas de la Casa</h2>
+                    <ul id="rulesContentDynamic" class="info-list">
+                        <!-- El contenido se cargará dinámicamente desde config.json -->
+                        <li>Cargando normas...</li>
+                    </ul>
+                </div>
+
+                <!-- Sección de Servicios Ofrecidos -->
+                <div class="info-card">
+                    <h2>Servicios Incluidos</h2>
+                    <ul id="servicesContentDynamic" class="info-list">
+                        <!-- El contenido se cargará dinámicamente desde config.json -->
+                        <li>Cargando servicios...</li>
+                    </ul>
+                </div>
+
+                <!-- Sección de Comodidades del Apartamento -->
+                <div class="info-card">
+                    <h2>Comodidades del Apartamento</h2>
+                    <ul id="amenitiesContentDynamic" class="info-list">
+                        <!-- El contenido se cargará dinámicamente desde config.json -->
+                        <li>Cargando comodidades...</li>
+                    </ul>
+                </div>
+
+                <!-- Nueva Sección: Dónde estamos -->
+                <div class="info-card">
+                    <h2 id="locationTitleDynamic">Cargando...</h2>
+                    <p id="locationDescriptionDynamic">Cargando...</p>
+                    <p><strong>Dirección:</strong> <span id="locationAddressDynamic">Cargando...</span></p>
+                    
+                    <h3>Cómo llegar</h3>
+                    <ul id="gettingThereDynamic" class="info-list">
+                        <li>Cargando opciones de llegada...</li>
+                    </ul>
+
+                    <h3>Atracciones Cercanas</h3>
+                    <ul id="nearbyAttractionsDynamic" class="info-list">
+                        <li>Cargando atracciones cercanas...</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página: Contiene información de copyright y enlaces a redes sociales -->
+    <footer>
+        <div class="container">
+            <!-- El texto del footer se cargará dinámicamente desde config.json -->
+            <p id="footerTextDynamic">Cargando...</p>
+            <!-- Los enlaces sociales se generarán aquí con JavaScript desde config.json -->
+            <div class="social-links" id="socialLinksDynamic">
+                <!-- Los enlaces se generarán aquí con JavaScript -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de JavaScript: Necesario para cargar la configuración y el contenido dinámico -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -38,8 +38,8 @@
   ],
   "footerText": "© 2024 Apartamento Rural Asturias. Todos los derechos reservados.",
   "heroPage": {
-    "title": "Bienvenido al Apartamento",
-    "description": "Tu escapada perfecta te espera. Consulta la disponibilidad y planifica tu estancia."
+    "title": "Bienvenido a Miguermo Asturias",
+    "description": "La web de Miguermo para ayudarte a planificar unos días en nuestro apartamento rural en Asturias."
   },
   "contactPage": {
     "title": "Contacta con Nosotros",
@@ -57,6 +57,49 @@
     "bookingSection": {
       "bookingTitle": "Envía tu Solicitud de Reserva",
       "bookingDescription": "Una vez que hayas verificado la disponibilidad, haz clic en el botón de abajo para acceder a nuestro formulario de reserva. Nos pondremos en contacto contigo lo antes posible para confirmar tu estancia."
+    }
+  },
+  "informationPage": {
+    "title": "¡Bienvenid@s a Nuestro Apartamento!",
+    "description": "Hola a tod@s. Esta página es para facilitaros la vida cuando queráis venir a disfrutar unos días en nuestro apartamento. Aquí tenéis la información clave para que vuestra estancia sea lo más cómoda posible y podáis planificaros sin problemas. Si tenéis cualquier duda que no esté aquí, ¡no dudéis en consultarnos directamente!",
+    "rules": [
+      "**¡No fumar!** Es una regla estricta para mantener el apartamento fresco para todos.",
+      "**Horario de descanso:** Por respeto a los vecinos, intentad mantener la calma entre las 22:00h y las 08:00h. Las paredes no son de papel, ¡jeje!",
+      "**Orden a la salida:** No os agobiéis con la limpieza a fondo, pero por favor, dejad el apartamento recogido y con los enseres básicos en su sitio.",
+      "**Cerrar todo:** Antes de salir, aseguraos de cerrar bien puertas y ventanas. ¡Más vale prevenir!",
+      "**Basura:** Tenemos contenedores de reciclaje cerca, por favor, separad los residuos. ¡Ayudamos al planeta y mantenemos el apartamento limpio!",
+      "**Mascotas:** Si pensáis traer a vuestras mascotas, por favor, avisadnos con antelación. Algunas excepciones se pueden considerar, ¡pero siempre consultando primero!"
+    ],
+    "services": [
+      "**Wi-Fi super rápido:** ¡Para que no os perdáis nada ni se os corte el streaming! La clave la encontraréis en la nevera.",
+      "**Ropa de cama y toallas:** No os preocupéis por eso, tendréis todo lo necesario y de sobra.",
+      "**Kit de bienvenida:** Siempre dejamos un poquito de café, té y azúcar para el primer día. ¡Un pequeño detalle para empezar bien!",
+      "**Asistencia:** Si tenéis alguna emergencia, nuestro teléfono está 24/7. Para el resto de dudas, intentad agruparlas para no 'colapsarnos', ¡pero preguntad sin miedo!",
+      "**Info turística local:** En el salón encontraréis un pequeño dosier con recomendaciones de sitios para visitar, comer y actividades por la zona. ¡Asturias para comérsela!"
+    ],
+    "amenities": [
+      "**Cocina equipada:** Tendréis de todo: vitrocerámica, horno, microondas, nevera grande, lavavajillas... ¡para que os sintáis como en casa y podáis cocinar lo que queráis!",
+      "**Cafetera Nespresso:** Para los amantes del café, con algunas cápsulas de cortesía.",
+      "**Smart TV:** Con acceso a Netflix, HBO, Disney+ (si tenéis cuenta, ¡la nuestra no está incluida!), YouTube...",
+      "**Lavadora:** Para esas estancias más largas o si os mancháis en alguna ruta. El tendedero está en la terraza.",
+      "**Secador y plancha:** Para que siempre estéis impecables.",
+      "**Calefacción:** El apartamento es calentito en invierno, ¡no pasaréis frío!",
+      "**Ducha de hidromasaje:** ¡Para relajaros después de un día de exploración!"
+    ],
+    "locationInfo": {
+        "title": "¿Dónde estamos?",
+        "description": "Nuestro apartamento está en una ubicación privilegiada en [Nombre de la Ciudad/Pueblo], ideal para explorar [Región/Área].",
+        "address": "Calle Falsa 123, 33001 Oviedo, Asturias, España",
+        "gettingThere": [
+            "**En coche:** Fácil acceso desde la autovía A-X. Hay aparcamiento gratuito en los alrededores.",
+            "**En transporte público:** La estación de autobuses está a 10 minutos a pie. Hay una parada de tren a 20 minutos."
+        ],
+        "nearbyAttractions": [
+            "**Playa de San Claudio:** A solo 5 minutos en coche, perfecta para un día de sol y mar.",
+            "**Centro de Oviedo:** A 15 minutos en coche, ideal para pasear, hacer compras y disfrutar de la gastronomía.",
+            "**Ruta del Oso:** Un plan genial para hacer en bici o caminando, ¡preparad las piernas!",
+            "**Museo de Bellas Artes de Asturias:** Imprescindible para los amantes del arte."
+        ]
     }
   },
   "socialLinks": [

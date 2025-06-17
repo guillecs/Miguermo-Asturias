@@ -2,6 +2,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /**
+     * Función auxiliar para convertir texto Markdown simple (negrita con **) a HTML.
+     * Solo para uso interno y formatos muy básicos.
+     */
+    function formatMarkdownText(text) {
+        // Reemplaza **texto** con <strong>texto</strong>
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+
+    /**
      * -------------------------------------------
      * SECCIÓN 1: CARGA DE CONFIGURACIÓN Y ESTILOS
      * -------------------------------------------
@@ -98,6 +107,59 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn('Enlace del formulario de reserva no encontrado o vacío en config.json');
         }
 
+        // --- Elementos específicos de la página de información (informacion.html) ---
+        const infoTitleDynamic = document.getElementById('infoTitleDynamic');
+        if (infoTitleDynamic && config.informationPage) infoTitleDynamic.textContent = config.informationPage.title;
+
+        const infoDescriptionDynamic = document.getElementById('infoDescriptionDynamic');
+        if (infoDescriptionDynamic && config.informationPage) infoDescriptionDynamic.textContent = config.informationPage.description;
+
+        const rulesContentDynamic = document.getElementById('rulesContentDynamic');
+        if (rulesContentDynamic && config.informationPage && config.informationPage.rules) {
+            // Aplica formatMarkdownText a cada regla antes de crear el li
+            rulesContentDynamic.innerHTML = config.informationPage.rules.map(rule => `<li>${formatMarkdownText(rule)}</li>`).join('');
+        }
+
+        const servicesContentDynamic = document.getElementById('servicesContentDynamic');
+        if (servicesContentDynamic && config.informationPage && config.informationPage.services) {
+            // Aplica formatMarkdownText a cada servicio antes de crear el li
+            servicesContentDynamic.innerHTML = config.informationPage.services.map(service => `<li>${formatMarkdownText(service)}</li>`).join('');
+        }
+
+        const amenitiesContentDynamic = document.getElementById('amenitiesContentDynamic');
+        if (amenitiesContentDynamic && config.informationPage && config.informationPage.amenities) {
+            // Aplica formatMarkdownText a cada comodidad antes de crear el li
+            amenitiesContentDynamic.innerHTML = config.informationPage.amenities.map(amenity => `<li>${formatMarkdownText(amenity)}</li>`).join('');
+        }
+
+        // Nuevos elementos para la sección de ubicación
+        const locationTitleDynamic = document.getElementById('locationTitleDynamic');
+        if (locationTitleDynamic && config.informationPage && config.informationPage.locationInfo) {
+            locationTitleDynamic.textContent = config.informationPage.locationInfo.title;
+        }
+
+        const locationDescriptionDynamic = document.getElementById('locationDescriptionDynamic');
+        if (locationDescriptionDynamic && config.informationPage && config.informationPage.locationInfo) {
+            locationDescriptionDynamic.textContent = config.informationPage.locationInfo.description;
+        }
+
+        const locationAddressDynamic = document.getElementById('locationAddressDynamic');
+        if (locationAddressDynamic && config.informationPage && config.informationPage.locationInfo) {
+            locationAddressDynamic.textContent = config.informationPage.locationInfo.address;
+        }
+
+        const gettingThereDynamic = document.getElementById('gettingThereDynamic');
+        if (gettingThereDynamic && config.informationPage && config.informationPage.locationInfo && config.informationPage.locationInfo.gettingThere) {
+            // Aplica formatMarkdownText a cada elemento antes de crear el li
+            gettingThereDynamic.innerHTML = config.informationPage.locationInfo.gettingThere.map(item => `<li>${formatMarkdownText(item)}</li>`).join('');
+        }
+
+        const nearbyAttractionsDynamic = document.getElementById('nearbyAttractionsDynamic');
+        if (nearbyAttractionsDynamic && config.informationPage && config.informationPage.locationInfo && config.informationPage.locationInfo.nearbyAttractions) {
+            // Aplica formatMarkdownText a cada elemento antes de crear el li
+            nearbyAttractionsDynamic.innerHTML = config.informationPage.locationInfo.nearbyAttractions.map(item => `<li>${formatMarkdownText(item)}</li>`).join('');
+        }
+
         // --- Generación de enlaces sociales (si existen en config.json y el elemento socialLinksDynamic) ---
         const socialLinksDynamic = document.getElementById('socialLinksDynamic');
         if (socialLinksDynamic && config.socialLinks && config.socialLinks.length > 0) {
@@ -112,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 socialLinksDynamic.appendChild(a);
             });
             // Opcional: Cargar FontAwesome si no está ya enlazado en el HTML
-            // Este enlace ya está en calendario.html, pero se deja por si se usa en otras páginas sin él
+            // Este enlace ya está en calendario.html e informacion.html, pero se deja por si se usa en otras páginas sin él
             if (!document.querySelector('link[href*="font-awesome"]')) {
                 const faLink = document.createElement('link');
                 faLink.rel = 'stylesheet';
@@ -123,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Petición para obtener y procesar el archivo config.json
-    fetch('data/config.json') // CAMBIADO: La ruta ahora es 'data/config.json'
+    fetch('data/config.json') // La ruta debe ser correcta, asumiendo 'data/'
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Error al cargar config.json: ${response.statusText}`);
@@ -141,8 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
              * Este bloque solo se ejecuta en la página que contenga el pop-up (index.html).
              */
 
-            // IMPORTANTE: Se ha movido la contraseña del config.json a aquí por motivos de seguridad.
-            // AÚN ASÍ, almacenar la contraseña directamente en el código JavaScript del lado del cliente
+            // IMPORTANTE: La contraseña está aquí por motivos de funcionalidad.
             // NO ES SEGURO para un entorno de producción. Cualquier usuario puede verla.
             // Para una seguridad adecuada, se recomienda implementar un sistema de autenticación en el servidor.
             const CORRECT_PASSWORD = '1234'; // Contraseña hardcodeada (NO SEGURA para producción)
