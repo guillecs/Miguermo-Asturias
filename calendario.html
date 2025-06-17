@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="d-flex flex-column min-vh-100">
+    <!-- Pop-up de Contraseña (inicialmente oculto con d-none de Bootstrap) -->
+    <div id="password-overlay" class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-85 d-flex justify-content-center align-items-center z-3 d-none">
+        <div class="bg-white p-5 rounded-3 shadow-lg text-center mx-3" style="max-width: 400px; width: 100%;">
+            <h2 class="text-primary fs-4 fw-bold mb-3">Acceso Restringido</h2>
+            <p class="mb-4 text-dark">Por favor, introduce la contraseña para acceder al contenido del apartamento.</p>
+            <input type="password" id="password-input" placeholder="Contraseña" autocomplete="off" class="form-control p-3 mb-3 border border-secondary rounded-2 fs-6">
+            <button id="password-submit" class="btn btn-primary w-100 p-3 fw-bold rounded-2 fs-5">Acceder</button>
+            <p id="password-error" class="text-danger bg-danger bg-opacity-10 border border-danger p-2 rounded-2 mt-3 fw-bold d-none"></p>
+        </div>
+    </div>
 
     <!-- Encabezado de la página: Contiene el logo y la navegación principal -->
     <header class="bg-dark text-white py-3 border-bottom border-primary border-4">

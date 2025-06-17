@@ -212,24 +212,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const passwordSubmit = document.getElementById('password-submit');
             const passwordError = document.getElementById('password-error');
 
-            // Comprueba si el elemento del pop-up existe en la página actual.
+            // Comprueba si el elemento del pop-up existe en la página actual (solo index.html)
             if (passwordOverlay) {
-                // Si existe, lo muestra usando clases de Bootstrap y controlando la opacidad
-                passwordOverlay.classList.remove('d-none'); // Quita d-none
-                passwordOverlay.classList.add('d-flex');    // Añade d-flex para mostrarlo como flexbox
-                passwordOverlay.style.opacity = '1';        // Asegura la opacidad a 1 para la transición de fade out
+                // Paso 1: Comprobar si la contraseña ya fue introducida correctamente en esta sesión
+                if (sessionStorage.getItem('passwordCorrect') === 'true') {
+                    // Si ya es correcta, ocultar el overlay inmediatamente
+                    passwordOverlay.classList.add('d-none');
+                    passwordOverlay.classList.remove('d-flex');
+                    return; // Salir de la función para no mostrar el modal
+                }
+
+                // Si no es correcta, mostrar el modal de contraseña
+                passwordOverlay.classList.remove('d-none');
+                passwordOverlay.classList.add('d-flex');
+                passwordOverlay.style.opacity = '1';
 
                 passwordInput.focus(); // Pone el cursor en el campo de contraseña.
 
                 // Función para verificar la contraseña introducida.
                 const checkPassword = () => {
                     if (passwordInput.value === CORRECT_PASSWORD) {
-                        // Contraseña correcta: oculta el pop-up con una transición.
+                        // Contraseña correcta: guardar en sessionStorage
+                        sessionStorage.setItem('passwordCorrect', 'true');
+
+                        // Ocultar el pop-up con una transición.
                         passwordOverlay.style.opacity = '0'; // Inicia la transición de opacidad a 0
                         setTimeout(() => {
-                            passwordOverlay.classList.remove('d-flex'); // Quita d-flex
-                            passwordOverlay.classList.add('d-none');    // Añade d-none para ocultar completamente
-                            passwordOverlay.style.opacity = '1';        // Restablece la opacidad a 1 para la próxima vez que se muestre
+                            passwordOverlay.classList.remove('d-flex');
+                            passwordOverlay.classList.add('d-none');
+                            passwordOverlay.style.opacity = '1'; // Restablece la opacidad para futuras visualizaciones
                         }, 300); // Espera a que termine la transición de opacidad (debe coincidir con la duración de CSS)
                     } else {
                         // Contraseña incorrecta: muestra un mensaje de error.
