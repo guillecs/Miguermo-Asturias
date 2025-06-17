@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilidad Apartamento - [Tu Apartamento]</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="password-overlay" class="password-overlay">
+        <div class="password-form-container">
+            <h2>Acceso Restringido</h2>
+            <p>Por favor, introduce la contraseña para acceder al contenido del apartamento.</p>
+            <input type="password" id="password-input" placeholder="Contraseña" autocomplete="off">
+            <button id="password-submit">Acceder</button>
+            <p id="password-error" style="display: none;"></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" id="siteTitleDynamic">Apartamento Vacacional</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="checklist.html">Checklist</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1 id="heroTitleDynamic">Bienvenido al Apartamento</h1>
+                <p id="heroDescriptionDynamic">Tu escapada perfecta te espera. Consulta la disponibilidad y planifica tu estancia.</p>
+            </div>
+        </section>
+
+        <!-- Nueva sección para las opciones de navegación a otras páginas -->
+        <section id="options" class="info-section">
+            <div class="container">
+                <h2>Opciones del Apartamento</h2>
+                <p class="section-description">Explora las diferentes secciones para planificar y disfrutar de tu estancia.</p>
+                
+                <div class="options-grid">
+                    <div class="option-card">
+                        <h3>Calendario de Disponibilidad</h3>
+                        <p>Consulta las fechas en las que el apartamento está libre.</p>
+                        <a href="calendario.html" class="btn-primary">Ver Calendario</a>
+                    </div>
+                    <div class="option-card">
+                        <h3>Información del Apartamento</h3>
+                        <p>Descubre todos los detalles, normas y servicios del apartamento.</p>
+                        <a href="informacion.html" class="btn-primary">Ver Información</a>
+                    </div>
+                    <div class="option-card">
+                        <h3>Checklist de Estancia</h3>
+                        <p>Una guía práctica para tu llegada y salida.</p>
+                        <a href="checklist.html" class="btn-primary">Ver Checklist</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- La sección de Contacto se mantiene en index.html por ahora, o podría moverse también -->
+        <section id="contacto" class="info-section">
+            <div class="container">
+                <h2 id="contactTitleDynamic">Contacta con Nosotros</h2>
+                <div id="contactDetailsContent">
+                    <p>Cargando detalles de contacto...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p id="footerTextDynamic">© 2024 Apartamento Vacacional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "siteTitle": "Apartamento Rural Asturias",
+  "defaultTheme": "Asturias Green & Rural",
+  "colorThemes": [
+    {
+      "name": "Asturias Green & Rural",
+      "primary": "#2E8B57",
+      "secondary": "#6B8E23",
+      "accent": "#D2B48C",
+      "lightBg": "#F0F8F0",
+      "whiteBg": "#F8F8F0",
+      "darkText": "#2F4F4F",
+      "lightText": "#ffffff",
+      "borderColor": "#A2CD5A"
+    },
+    {
+      "name": "Default",
+      "primary": "#007bff",
+      "secondary": "#6c757d",
+      "accent": "#ffc107",
+      "lightBg": "#f8f9fa",
+      "whiteBg": "#ffffff",
+      "darkText": "#343a40",
+      "lightText": "#ffffff",
+      "borderColor": "#dee2e6"
+    },
+    {
+      "name": "Costero Sereno",
+      "primary": "#005F73",
+      "secondary": "#0A9396",
+      "accent": "#94D2BD",
+      "lightBg": "#EAEFF4",
+      "whiteBg": "#F5F9FC",
+      "darkText": "#001219",
+      "lightText": "#ffffff",
+      "borderColor": "#005F73"
+    }
+  ],
+  "footerText": "© 2024 Apartamento Rural Asturias. Todos los derechos reservados.",
+  "heroPage": {
+    "title": "Bienvenido al Apartamento",
+    "description": "Tu escapada perfecta te espera. Consulta la disponibilidad y planifica tu estancia."
+  },
+  "contactPage": {
+    "title": "Contacta con Nosotros",
+    "description": "Estamos aquí para resolver tus dudas y ayudarte con tu reserva. No dudes en ponerte en contacto con nosotros.",
+    "email": "info@apartamentoasturias.com",
+    "phone": "+34 123 456 789",
+    "address": "Calle Falsa 123, 33001 Oviedo, Asturias, España",
+    "hours": "Lunes a Viernes: 9:00 - 18:00<br>Sábados y Domingos: Solo emergencias (consulta disponibilidad)"
+  },
+  "calendarPage": {
+    "title": "Calendario y Reservas",
+    "description": "Consulta nuestra disponibilidad en el calendario y haz tu reserva a través del formulario externo.",
+    "googleCalendarEmbedUrl": "https://calendar.google.com/calendar/embed?src=miguermoasturias%40gmail.com&ctz=Europe%2FMadrid",
+    "googleFormLink": "https://docs.google.com/forms/d/e/1FAIpQLSf8z98xg1iXgWU5eG9kAdIuBWK2IDVxMC9BTPjqofw9CZJ-AQ/viewform",
+    "bookingSection": {
+      "bookingTitle": "Envía tu Solicitud de Reserva",
+      "bookingDescription": "Una vez que hayas verificado la disponibilidad, haz clic en el botón de abajo para acceder a nuestro formulario de reserva. Nos pondremos en contacto contigo lo antes posible para confirmar tu estancia."
+    }
+  },
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/yourpage",
+      "iconClass": "fab fa-facebook-f"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/yourpage",
+      "iconClass": "fab fa-instagram"
+    }
+  ]
+}

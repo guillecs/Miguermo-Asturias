@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- El título de la página se cargará dinámicamente desde config.json -->
+    <title id="siteTitleDynamic">Cargando...</title>
+    <!-- Enlazamos nuestro archivo CSS para los estilos de la página -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Enlace a FontAwesome para iconos de redes sociales, si los usas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado de la página: Contiene el logo y la navegación principal -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- El texto del logo/título del sitio se cargará dinámicamente desde config.json -->
+                <!-- Se ha cambiado el ID a siteTitleDynamic para consistencia con script.js -->
+                <a href="index.html" id="siteTitleDynamic">Cargando...</a> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="checklist.html">Checklist</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección principal de contenido para la página de Calendario -->
+    <main>
+        <section id="calendar-page" class="info-section">
+            <div class="container">
+                <!-- Título principal de la sección de Calendario -->
+                <h1 id="calendarTitleDynamic">Cargando...</h1>
+                <p class="section-description" id="calendarDescriptionDynamic">Cargando...</p>
+
+                <h2>Calendario de Disponibilidad</h2>
+                <div class="calendar-embed-container">
+                    <!-- Aquí se incrustará el iframe del Google Calendar con la URL de config.json -->
+                    <iframe id="googleCalendarEmbed"
+                            src=""
+                            style="border: 0" width="100%" height="600"
+                            frameborder="0" scrolling="no" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="booking-section">
+                    <!-- Título de la sección de reserva -->
+                    <h2 id="bookingTitleDynamic">Cargando Título de Reserva...</h2>
+                    <!-- Descripción de la sección de reserva -->
+                    <p id="bookingDescriptionDynamic">Cargando Descripción de Reserva...</p>
+                    <!-- Enlace al formulario de Google, se abre en una nueva pestaña -->
+                    <a href="#" id="bookingFormLink" target="_blank" class="btn-primary">
+                        Cargando Enlace de Formulario
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página: Contiene información de copyright y enlaces a redes sociales -->
+    <footer>
+        <div class="container">
+            <!-- El texto del footer se cargará dinámicamente desde config.json -->
+            <p id="footerTextDynamic">Cargando...</p>
+            <!-- Los enlaces sociales se generarán aquí con JavaScript desde config.json -->
+            <div class="social-links" id="socialLinksDynamic">
+                <!-- Los enlaces se generarán aquí con JavaScript -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de JavaScript: Necesario para cargar la configuración y el contenido dinámico -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
