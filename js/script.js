@@ -116,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const rulesContentDynamic = document.getElementById('rulesContentDynamic');
         if (rulesContentDynamic && config.informationPage && config.informationPage.rules) {
-            // Aplica formatMarkdownText a cada regla antes de crear el li
+            // Unir los elementos de la lista con un salto de línea si se desean párrafos separados,
+            // o usar map para crear elementos <li> para una lista HTML
             rulesContentDynamic.innerHTML = config.informationPage.rules.map(rule => `<li>${formatMarkdownText(rule)}</li>`).join('');
         }
 
@@ -160,27 +161,29 @@ document.addEventListener('DOMContentLoaded', () => {
             nearbyAttractionsDynamic.innerHTML = config.informationPage.locationInfo.nearbyAttractions.map(item => `<li>${formatMarkdownText(item)}</li>`).join('');
         }
 
-        // --- Generación de enlaces sociales (si existen en config.json y el elemento socialLinksDynamic) ---
-        const socialLinksDynamic = document.getElementById('socialLinksDynamic');
-        if (socialLinksDynamic && config.socialLinks && config.socialLinks.length > 0) {
-            socialLinksDynamic.innerHTML = ''; // Limpiar cualquier contenido previo
-            config.socialLinks.forEach(link => {
-                const a = document.createElement('a');
-                a.href = link.url;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                // Utiliza el icono de FontAwesome directamente si la clase está disponible
-                a.innerHTML = `<i class="${link.iconClass}"></i> ${link.name}`; 
-                socialLinksDynamic.appendChild(a);
-            });
-            // Opcional: Cargar FontAwesome si no está ya enlazado en el HTML
-            // Este enlace ya está en calendario.html e informacion.html, pero se deja por si se usa en otras páginas sin él
-            if (!document.querySelector('link[href*="font-awesome"]')) {
-                const faLink = document.createElement('link');
-                faLink.rel = 'stylesheet';
-                faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
-                document.head.appendChild(faLink);
-            }
+        // --- Elementos específicos de la página de checklist (checklist.html) ---
+        const checklistTitleDynamic = document.getElementById('checklistTitleDynamic');
+        if (checklistTitleDynamic && config.checklistPage) checklistTitleDynamic.textContent = config.checklistPage.title;
+
+        const checklistDescriptionDynamic = document.getElementById('checklistDescriptionDynamic');
+        if (checklistDescriptionDynamic && config.checklistPage) checklistDescriptionDynamic.textContent = config.checklistPage.description;
+
+        const arrivalDescriptionDynamic = document.getElementById('arrivalDescriptionDynamic');
+        if (arrivalDescriptionDynamic && config.checklistPage && config.checklistPage.arrivalForm) {
+            arrivalDescriptionDynamic.textContent = config.checklistPage.arrivalForm.description;
+        }
+        const arrivalFormLink = document.getElementById('arrivalFormLink');
+        if (arrivalFormLink && config.checklistPage && config.checklistPage.arrivalForm) {
+            arrivalFormLink.href = config.checklistPage.arrivalForm.link;
+        }
+
+        const departureDescriptionDynamic = document.getElementById('departureDescriptionDynamic');
+        if (departureDescriptionDynamic && config.checklistPage && config.checklistPage.departureForm) {
+            departureDescriptionDynamic.textContent = config.checklistPage.departureForm.description;
+        }
+        const departureFormLink = document.getElementById('departureFormLink');
+        if (departureFormLink && config.checklistPage && config.checklistPage.departureForm) {
+            departureFormLink.href = config.checklistPage.departureForm.link;
         }
     }
 

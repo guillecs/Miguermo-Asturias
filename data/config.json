@@ -102,16 +102,16 @@
         ]
     }
   },
-  "socialLinks": [
-    {
-      "name": "Facebook",
-      "url": "https://facebook.com/yourpage",
-      "iconClass": "fab fa-facebook-f"
+  "checklistPage": {
+    "title": "Checklist para tu Estancia",
+    "description": "Para que tu llegada y salida sean lo más cómodas posible, te dejamos unos formularios rápidos con los puntos clave. ¡Ayúdanos a mantener todo en orden!",
+    "arrivalForm": {
+      "description": "Antes de llegar, por favor, rellena este formulario para que tengamos todo listo. Nos ayuda a saber vuestra hora de llegada y si tenéis alguna necesidad especial.",
+      "link": "https://forms.gle/TODO_TU_LINK_DE_LLEGADA"
     },
-    {
-      "name": "Instagram",
-      "url": "https://instagram.com/yourpage",
-      "iconClass": "fab fa-instagram"
+    "departureForm": {
+      "description": "Al salir, os agradeceríamos que rellenarais este breve formulario. Nos ayuda a verificar que todo está correcto y a recopilar vuestras impresiones para seguir mejorando.",
+      "link": "https://forms.gle/TODO_TU_LINK_DE_SALIDA"
     }
-  ]
+  }
 }
