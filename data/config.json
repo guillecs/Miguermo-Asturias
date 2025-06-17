@@ -1,6 +1,6 @@
 {
-  "siteTitle": "Apartamento San Claudio",
-  "footerText": "© 2024 Apartamento San Claudio. Todos los derechos reservados.",
+  "siteTitle": "Miguermo en San Claudio",
+  "footerText": "© 2024 Apartamento Miguermo en San Claudio. Hecho con cariño para familia y amigos.",
   "defaultTheme": "Asturias Green & Rural",
   "colorThemes": [
     {
@@ -27,72 +27,72 @@
     }
   ],
   "heroPage": {
-    "title": "Bienvenido a tu Refugio en Asturias",
-    "description": "Descubre la tranquilidad y belleza de San Claudio. Tu escapada perfecta te espera."
+    "title": "¡Bienvenidos, Familia y Amigos!",
+    "description": "Este es vuestro rincón en San Claudio. Consultad la disponibilidad y contadnos cuándo os apetece venir. ¡Aquí encontraréis todo lo necesario para planificar vuestra escapada!"
   },
   "calendarPage": {
-    "title": "Calendario de Disponibilidad",
-    "description": "Consulta las fechas disponibles y planifica tu estancia con nosotros. ¡Estamos deseando recibirte!",
-    "googleCalendarEmbedUrl": "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&hl=es&src=bWlndWVybW9hc3R1cmlhc0BnbWFpbC5jb20&color=%23009688",
+    "title": "Calendario de Disponibilidad Familiar",
+    "description": "Aquí podéis ver cuándo nuestro apartamento está libre para vuestras visitas. ¡Echad un vistazo y planifiquemos juntos vuestra estancia!",
+    "googleCalendarEmbedUrl": "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showCalendars=0&hl=es&src=bWlndWVybW9hc3R1cmlhc0BnbWFpbC5jb20&color=%2328a745",
     "bookingSection": {
-      "bookingTitle": "¡Reserva Ahora!",
-      "bookingDescription": "Si has encontrado las fechas perfectas, no esperes más para asegurar tu estancia. Puedes rellenar nuestro formulario de reserva.",
-      "googleFormLink": "https://forms.gle/2WUYFfqCVanYwDKC8"
+      "bookingTitle": "¡Solicita tu Estancia!",
+      "bookingDescription": "Si ya habéis encontrado unas fechas que os encajen, por favor, rellenad este pequeño formulario para que podamos coordinar vuestra visita. ¡Estamos deseando recibiros!",
+      "googleFormLink": "https://forms.gle/NsCiy5J7yJP5M5dLA"
     }
   },
   "informationPage": {
-    "title": "Información Detallada del Apartamento",
-    "description": "Todo lo que necesitas saber para una estancia cómoda y sin preocupaciones en nuestro apartamento.",
+    "title": "Información Práctica para Vuestra Visita",
+    "description": "Aquí encontraréis todos los detalles importantes para que vuestra estancia sea lo más cómoda y agradable posible.",
     "rules": [
-      "**Horario de Check-in:** A partir de las 15:00h.",
-      "**Horario de Check-out:** Hasta las 11:00h.",
-      "**No fumar:** Está estrictamente prohibido fumar en el interior del apartamento.",
-      "**Mascotas:** Consultar disponibilidad y condiciones para mascotas.",
-      "**Ruido:** Por favor, respeta el descanso de los vecinos, especialmente entre las 22:00h y las 08:00h.",
-      "**Limpieza:** Rogamos dejar el apartamento en un estado de orden y limpieza razonable.",
-      "**Basura:** Utiliza los contenedores de reciclaje y basura ubicados en las inmediaciones."
+      "**Horario de Llegada:** Podéis llegar a partir de las 15:00h. ¡Avisadnos con antelación!",
+      "**Horario de Salida:** Por favor, dejad el apartamento antes de las 11:00h para que podamos prepararlo para los siguientes.",
+      "**No fumar:** Rogamos encarecidamente no fumar en el interior del apartamento. Hay zonas exteriores designadas.",
+      "**Mascotas:** Sabemos que son parte de la familia, pero por favor, consultadnos antes si queréis traer a vuestras mascotas. Podríamos tener algunas condiciones especiales.",
+      "**Ruido:** Seamos considerados con los vecinos, especialmente por la noche (de 22:00h a 08:00h).",
+      "**Orden y Limpieza:** Os agradeceríamos que dejarais el apartamento en un estado razonable de orden al marcharos.",
+      "**Basura:** Por favor, utilizad los contenedores de reciclaje y basura que encontraréis en las inmediaciones."
     ],
     "services": [
-      "**WiFi de alta velocidad:** Conexión gratuita en todo el apartamento.",
-      "**Parking:** Aparcamiento público gratuito en los alrededores del edificio.",
-      "**Ropa de cama y toallas:** Suministradas y limpias para cada huésped.",
-      "**Kit de bienvenida:** Pequeños detalles para empezar tu estancia (café, té, etc.)."
+      "**WiFi de alta velocidad:** Conexión gratuita para todos.",
+      "**Parking:** Hay aparcamiento público gratuito en los alrededores del edificio.",
+      "**Ropa de cama y toallas:** Las encontraréis limpias y listas para vuestro uso.",
+      "**Kit de bienvenida:** Pequeños detalles para que empecéis a sentiros como en casa (café, té, etc.)."
     ],
     "amenities": [
-      "**Cocina totalmente equipada:** Horno, microondas, vitrocerámica, nevera, lavavajillas, cafetera y menaje completo.",
-      "**Salón-comedor:** Amplio y luminoso, con TV de pantalla plana y sofá cama.",
-      "**Dormitorio principal:** Cama doble con colchón de confort superior.",
+      "**Cocina totalmente equipada:** Con todo lo necesario para vuestras comidas (horno, microondas, vitrocerámica, nevera, lavavajillas, cafetera y menaje completo).",
+      "**Salón-comedor:** Un espacio amplio y cómodo con TV de pantalla plana y sofá cama por si necesitáis espacio extra.",
+      "**Dormitorio principal:** Con cama doble y un colchón muy cómodo para un buen descanso.",
       "**Baño:** Con ducha y secador de pelo.",
-      "**Calefacción:** Sistema de calefacción individual en todas las estancias."
+      "**Calefacción:** Para estar calentitos en los días más frescos."
     ],
     "locationInfo": {
-      "title": "Dónde estamos",
-      "description": "Nuestro apartamento está ubicado en el encantador pueblo de San Claudio, a pocos minutos de Oviedo y rodeado de naturaleza.",
+      "title": "Dónde nos encontramos",
+      "description": "Nuestro apartamento está en el bonito pueblo de San Claudio, a un paso de Oviedo y rodeado de la naturaleza asturiana.",
       "address": "San Claudio, 33191 Oviedo, Asturias, España",
       "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23206.638779946043!2d-5.938295599084637!3d43.35966964379723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd369292825b4e8d%3A0x7c40684f2a5e3f1c!2sSan%20Claudio%2C%2033191%20Oviedo%2C%20Asturias!5e0!3m2!1ses!2ses!4v1750173640643!5m2!1ses!2ses",
       "gettingThere": [
-        "**En coche:** Acceso rápido desde la autovía A-63. Estamos a 10 minutos en coche del centro de Oviedo.",
-        "**Transporte público:** Parada de tren de cercanías (línea Oviedo-San Claudio) a 5 minutos a pie. También hay servicio de autobús.",
-        "**Desde el aeropuerto de Asturias (OVD):** Aproximadamente 30 minutos en coche o taxi."
+        "**En coche:** Acceso rápido desde la autovía A-63. Estamos a solo 10 minutos del centro de Oviedo.",
+        "**Transporte público:** Hay una parada de tren de cercanías (línea Oviedo-San Claudio) a 5 minutos a pie. También servicio de autobús.",
+        "**Desde el aeropuerto de Asturias (OVD):** Un trayecto de unos 30 minutos en coche o taxi."
       ],
       "nearbyAttractions": [
-        "**Oviedo:** Visita la Catedral, el Casco Antiguo y el Monte Naranco (a 15 min en coche).",
-        "**Senda del Oso:** Preciosa vía verde para caminar o ir en bicicleta (acceso a 20 min en coche).",
-        "**Playas:** Varias playas de la costa asturiana a unos 30-40 minutos en coche (ej. Gijón, Salinas).",
+        "**Oviedo:** No os perdáis la Catedral, el Casco Antiguo y el Monte Naranco (a 15 min en coche).",
+        "**Senda del Oso:** Una preciosa vía verde ideal para caminar o ir en bicicleta (acceso a 20 min en coche).",
+        "**Playas:** Varias playas de la costa asturiana están a unos 30-40 minutos en coche (por ejemplo, Gijón o Salinas).",
         "**Prerrománico Asturiano:** Muy cerca de joyas como San Miguel de Lillo y Santa María del Naranco."
       ]
     }
   },
   "checklistPage": {
-    "title": "Tu Checklist de Estancia",
-    "description": "Te facilitamos unos checklists para que tu llegada y salida del apartamento sean lo más sencillas posible.",
+    "title": "Vuestro Checklist de Estancia",
+    "description": "Para que vuestra visita sea lo más cómoda posible, aquí os dejamos unos checklists útiles para la llegada y la salida.",
     "arrivalForm": {
-      "description": "Antes de tu llegada, por favor, rellena este formulario para que tengamos toda la información necesaria.",
-      "link": "https://docs.google.com/forms/d/e/1FAIpQLSf8z98xg1iXgWU5eG9kAdIuBWK2IDVxMC9BTPjqofw9CZJ-AQ/viewform?embedded=true"
+      "description": "Antes de llegar, por favor, rellenad este formulario para que tengamos todo listo para vuestra bienvenida.",
+      "link": "https://forms.gle/NsCiy5J7yJP5M5dLA"
     },
     "departureForm": {
-      "description": "Para asegurar una salida sin problemas, te pedimos que completes este formulario antes de dejar el apartamento.",
-      "link": "https://docs.google.com/forms/d/e/1FAIpQLSf8z98xg1iXgWU5eG9kAdIuBWK2IDVxMC9BTPjqofw9CZJ-AQ/viewform?embedded=true"
+      "description": "Antes de marchar, por favor, ayudadnos completando este formulario para que sepamos que todo está en orden.",
+      "link": "https://forms.gle/NsCiy5J7yJP5M5dLA"
     }
   }
 }
